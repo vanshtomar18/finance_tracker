@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+/node_modules
+
+# Environment variables
+.env
+*.env
+
+# Build files
+/build
+/dist
+
+# Logs
+*.log
+
+# Excel files
+*.xlsx
+
+# Upload directory
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# IDE files
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
