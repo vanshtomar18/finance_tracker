@@ -5,28 +5,28 @@ export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/ap
 
 export const API_PATHS = {
     AUTH:{
-        LOGIN: "/api/v1/auth/login",
-        REGISTER: "/api/v1/auth/register",
-        GET_USER_INFO: "/api/v1/auth/getUser",
-        UPDATE_PROFILE: "/api/v1/auth/update-profile",
+        LOGIN: "/auth/login",
+        REGISTER: "/auth/register",
+        GET_USER_INFO: "/auth/getUser",
+        UPDATE_PROFILE: "/auth/update-profile",
     },
     DASHBOARD:{
-        GET_DATA: "/api/v1/dashboard",
-        GET_ANALYTICS: "/api/v1/dashboard/analytics",
+        GET_DATA: "/dashboard",
+        GET_ANALYTICS: "/dashboard/analytics",
     },
     INCOME:{
-        ADD_INCOME: "/api/v1/income/add",
-        GET_INCOME: "/api/v1/income/get",
-        DELETE_INCOME: (incomeId)=>`/api/v1/income/${incomeId}`,
-        DOWNLOAD_INCOME: "/api/v1/income/downloadexcel",
+        ADD_INCOME: "/income/add",
+        GET_INCOME: "/income/get",
+        DELETE_INCOME: (incomeId)=>`/income/${incomeId}`,
+        DOWNLOAD_INCOME: "/income/downloadexcel",
     },
     EXPENSE:{
-        ADD_EXPENSE: "/api/v1/expense/add",
-        GET_EXPENSE: "/api/v1/expense/get",
-        DELETE_EXPENSE: (expenseId)=>`/api/v1/expense/${expenseId}`,
-        DOWNLOAD_EXPENSE:  "/api/v1/expense/downloadexcel",
+        ADD_EXPENSE: "/expense/add",
+        GET_EXPENSE: "/expense/get",
+        DELETE_EXPENSE: (expenseId)=>`/expense/${expenseId}`,
+        DOWNLOAD_EXPENSE:  "/expense/downloadexcel",
     },
     IMAGE:{
-        UPLOAD_IMAGE: "/api/v1/auth/upload-image"
+        UPLOAD_IMAGE: "/auth/upload-image"
     },
 }
