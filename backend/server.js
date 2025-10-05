@@ -14,7 +14,8 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:5173',  // Local development
-        'https://finance-tracker-hazel-mu.vercel.app', // Production frontend
+        'https://finance-tracker-hazel-mu.vercel.app', // Old production frontend
+        'https://finance-tracker-4plb.vercel.app',     // New production frontend
         'http://localhost:3000'   // Alternative local port
     ],
     credentials: true,
