@@ -11,17 +11,19 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const app = express();
 
 //middleware to handle CORS
-app.use(cors({
-    origin: [
-        'http://localhost:5173',  // Local development
-        'https://finance-tracker-hazel-mu.vercel.app', // Old production frontend
-        'https://finance-tracker-4plb.vercel.app',     // New production frontend
-        'http://localhost:3000'   // Alternative local port
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://finance-tracker-4plb.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    
+    // Handle preflight requests
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Max-Age', '86400'); // 24 hours
+        return res.status(200).json({});
+    }
+    next();
+});
 
 app.use(express.json());
 
